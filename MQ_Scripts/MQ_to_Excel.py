@@ -89,7 +89,7 @@ print('\nREAD:  ' + fname + '\nDONE: \'Module ' + quiz_num + ' Quiz.xlsx\' saved
 # Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
 #   it gets split into two different cells, resulting in more columns per row than there should be.
 #   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-#   likely has to do with the split() method in line 73, or for loop in line 56
+#   likely has to do with the split() method in line 73, or for loop in line 59
 #
 # Issue: Question numbers with double digits do not always work properly 
 #   (i.e. question 9 works, question 10 fails (everything off by +1 index), question 11+ works)
