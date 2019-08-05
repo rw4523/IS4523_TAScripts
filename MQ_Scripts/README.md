@@ -27,14 +27,14 @@ Written in Python 3 (Does not work in 2.7)
       a.  *True
       b.  False
       
-      2.  [--] This is MC question? {--}
+      2.  [A9] This is MC question? {--}
       a.  *Yes
       b.  No
       c.  Also No but not the same answer
       d.  No again but different answer
       e.  Still not the right answer
       
-      3.  [A2] This is a MA question? {1.A Powerpoint Name slide 2}
+      3.  [--] This is a MA question? {1.A Powerpoint Name slide 2}
       a.  *Correct Answer
       b.  *Another Correct Answer
       c.  *More Correct Answer
