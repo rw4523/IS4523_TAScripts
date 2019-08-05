@@ -92,5 +92,5 @@ print('\nREAD:  ' + fname + '\nDONE: \'Module ' + quiz_num + ' Quiz.xlsx\' saved
 #   likely has to do with the split() method in line 73, or for loop in line 56
 #
 # Issue: Question numbers with double digits do not always work properly 
-#   (i.e. question 9 works, question 10 fails (everything off by +1 index))
-#   (problem at line 30) ; see in Excel file: "Module ERROR Quiz.xlsx"
+#   (i.e. question 9 works, question 10 fails (everything off by +1 index), question 11+ works)
+#   (problem at line 30)
