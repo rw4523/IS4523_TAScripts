@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import re
 from tkinter import *
-from tkinter.filedialog import askopenfilename     # prompt for file
+from tkinter.filedialog import askopenfilename
 
 f_path = Tk()
 f_path.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("text files","*.txt"),("all files","*.*")))
