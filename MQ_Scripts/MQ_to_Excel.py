@@ -59,10 +59,10 @@ def question_to_row(data):
     for i in answer_list:
         if '*' in i:                  # if/else block to get rid of the asterisk (*) 
             #i = i.replace('\t*', '')
-            tmp.append(i.replace('\t*', '')[3:].strip())
+            tmp.append(i.replace('\t*', '')[i.index('.')+1:].strip())
             tmp.append('Correct')
         else:
-            tmp.append(i[3:].strip())
+            tmp.append(i[i.index('.')+1:].strip())
             tmp.append('Incorrect')
     lst.append(tmp)
 
@@ -77,15 +77,15 @@ with open(file_path, encoding='utf-8', mode='r') as file:
     # convert list to dataframe and export to Excel
     df = pd.DataFrame(lst, index=None)
     #df.columns = arr
-    quiz_num = input('Enter Module Quiz Number: ')
-    df.to_excel(fname + '.xlsx', index=False, header=None)
-print('\nREAD:  ' + fname + '\nDONE: \'Module ' + quiz_num + ' Quiz.xlsx\' saved to ' + os.getcwd())
+    #quiz_num = input('Enter Module Quiz Number: ')
+    df.to_excel(fname[0:-4] + '.xlsx', index=False, header=None)
+print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + os.getcwd())
 
 # ISSUES to fix (eventually)
 # Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
 #   it gets split into two different cells, resulting in more columns per row than there should be.
 #   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-##   Answer found @ line 49 & 51 ; replace .split(',') with another character
+##   Answer found @ line 53, 55 ; replace .split(',') with another character
 
 # Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
 # Need to append as raw string. 
