@@ -8,6 +8,7 @@ f_path = Tk()
 f_path.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("text files","*.txt"),("all files","*.*")))
 file_path = str(f_path.filename)
 fname = file_path[file_path.rfind('/')+1:]
+os.chdir(file_path[0:file_path.rfind('/')])
 
 lst = []      # append to lst when adding another row of questions
 # lst.append(['Quiz Questions', ' '])
@@ -85,7 +86,7 @@ print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + o
 # Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
 #   it gets split into two different cells, resulting in more columns per row than there should be.
 #   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-##   Answer found @ line 53, 55 ; replace .split(',') with another character
+##   Answer found @ line 50 & 52 ; replace .split(',') with another character
 
 # Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
 # Need to append as raw string. 
