@@ -85,7 +85,7 @@ print('\nREAD:  ' + fname + '\nDONE: \'Module ' + quiz_num + ' Quiz.xlsx\' saved
 # Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
 #   it gets split into two different cells, resulting in more columns per row than there should be.
 #   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-##   Answer found @ line 53, 55 ; replace .split(',') with another character
+##   Answer found @ line 49 & 51 ; replace .split(',') with another character
 
 # Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
 # Need to append as raw string. 
