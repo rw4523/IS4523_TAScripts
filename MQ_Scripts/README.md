@@ -20,7 +20,6 @@ Written in Python 3 (Does not work in 2.7)
    * The actual questions should be done using numbered list in `.docx` and copy pasted into a .txt file. 
    * Save as a `.txt` file on the PC. Then space out the questions (1 empty row between questions).
    * Script will prompt for where the `.txt file` is, and will format it into the BlackBoard format as a `.xlsx` file
-      * Currently, you have to choose what the new `.xlsx` is called (i.e. `1` --> `MQ1.xlsx`)
    * Questions should be done in this format:
 ```
       1.  [A1] True/False: This is a question. {Book pg. 2}
