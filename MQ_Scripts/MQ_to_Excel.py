@@ -46,9 +46,9 @@ def question_to_row(data):
 
     # if '{' or '}' does not exist
     if (not ' {' in data) or (not '}' in data):
-        answer_list = str(data.split('\n')).replace('a.', '').replace('b.', '').replace('c.', '').replace('d.', '').replace('e.', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        answer_list = str(data.split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
     else:
-        answer_list = str(data[data.index('}')+2:].split('\n')).replace('a.', '').replace('b.', '').replace('c.', '').replace('d.', '').replace('e.', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        answer_list = str(data[data.index('}')+2:].split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
     tmp = []
     tmp.append(q_number.strip())
     tmp.append(LO.strip())
@@ -58,19 +58,15 @@ def question_to_row(data):
     
     for i in answer_list:
         if '*' in i:                  # if/else block to get rid of the asterisk (*) 
-            i = i.replace('\t*', '')
-            tmp.append(i.strip())
-        else:
-            tmp.append(i.strip())
-            
-        if '*' in i:
-            i = i.replace('\t*', '')
+            #i = i.replace('\t*', '')
+            tmp.append(i.replace('\t*', '')[3:].strip())
             tmp.append('Correct')
         else:
+            tmp.append(i[3:].strip())
             tmp.append('Incorrect')
     lst.append(tmp)
 
-with open(file_path) as file:
+with open(file_path, encoding='utf-8', mode='r') as file:
     data = file.read()                                     # file read into a string (data)
     # print(data +'\n\n --- ')
     data_list = data.split('\n\n')
@@ -82,15 +78,14 @@ with open(file_path) as file:
     df = pd.DataFrame(lst, index=None)
     #df.columns = arr
     quiz_num = input('Enter Module Quiz Number: ')
-    df.to_excel('Module ' + quiz_num + ' Quiz.xlsx', index=False, header=None)
+    df.to_excel(fname + '.xlsx', index=False, header=None)
 print('\nREAD:  ' + fname + '\nDONE: \'Module ' + quiz_num + ' Quiz.xlsx\' saved to ' + os.getcwd())
 
 # ISSUES to fix (eventually)
 # Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
 #   it gets split into two different cells, resulting in more columns per row than there should be.
 #   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-#   likely has to do with the split() method in line 73, or for loop in line 59
-#
-# Issue: Question numbers with double digits do not always work properly 
-#   (i.e. question 9 works, question 10 fails (everything off by +1 index), question 11+ works)
-#   (problem at line 30)
+##   Answer found @ line 53, 55 ; replace .split(',') with another character
+
+# Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
+# Need to append as raw string. 
