@@ -42,6 +42,7 @@ Written in Python 3 (Does not work in 2.7)
       e.  Also Incorrect Answer
 ```
   * Notes:
+     * `.txt` file **MUST** be saved using UTF-8 encoding. (ANSI will cause errors)
      * Looks like 2 spaces `  ` on this `README.md` file, but that should be a tab. 
         * If copy/pasting from `.docx`, it should do this automatically
      * Do not add commas (`,`) or apostrophes (`'`) in answer choices because it can break the script (Not yet sure why).
