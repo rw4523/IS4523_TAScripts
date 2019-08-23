@@ -1,0 +1,17 @@
+﻿1.  [A1] True/False: This is a question. {Book pg. 2}
+a.  *True
+b.  False
+
+2.  [A9] This is MC question? {--}
+a.  *Yes
+b.  No
+c.  Also No but not the same answer
+d.  No again but different answer
+e.  Still not the right answer
+
+3.  [--] This is a MA question? {1.A Powerpoint Name slide 2}
+a.  *Correct Answer
+b.  *Another Correct Answer
+c.  *More Correct Answer
+d.  Incorrect Answer
+e.  Also Incorrect Answer
