@@ -41,11 +41,15 @@ Written in Python 3 (Does not work in 2.7)
       e.  Also Incorrect Answer
 ```
   * Notes:
-     * `.txt` file **MUST** be saved using UTF-8 encoding. (ANSI will cause errors)
+     * `.txt` file **MUST** be saved using **UTF-8 encoding**. (ANSI will cause errors)
      * Looks like 2 spaces `  ` on this `README.md` file, but that should be a tab. 
-        * If copy/pasting from `.docx`, it should do this automatically
-     * Do not add commas (`,`) or apostrophes (`'`) in answer choices because it can break the script (Not yet sure why).
+        * If copy/pasting from `.docx`, it should do this automatically. 
+        * You should still add 1 empty line between questions
+     * Do not add apostrophes (`'`) in answer choices because it can break the script (Not yet sure why).
+     * Backslashes can sometimes cause errors. (Need to figure out how to convert data stored in variables as raw string)
+        * Example answer choice: `\tmp` gets outputted as `mp`
      * If the question does not have an `LO` or `Ans.Loc.`, use double dash (`--`)
      * After the `.xlsx` is created, you need to copy paste the `LO`'s into the `.xlsx` file, before the block that is the quiz questions.
         * Might still require a human to check it, as it is not 100% perfect but will reduce time taken to make `.xlsx` file.
      * May require installing `tkinter`. For installation details, consult your package manager (pip, conda, etc.)
+        * Will likely be replacing this with Argparser in the future.
