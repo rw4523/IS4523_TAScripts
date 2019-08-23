@@ -47,9 +47,17 @@ def question_to_row(data):
 
     # if '{' or '}' does not exist
     if (not ' {' in data) or (not '}' in data):
-        answer_list = str(data.split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        # answer_list = str(data.split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        answer_list = data.split('\n')
+        for x in answer_list:
+            if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
+                x = x[5:]
     else:
-        answer_list = str(data[data.index('}')+2:].split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        # answer_list = str(data[data.index('}')+2:].split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
+        answer_list = data[data.index('}')+2:].split('\n')
+        for x in answer_list:
+            if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
+                x = x[5:]
     tmp = []
     tmp.append(q_number.strip())
     tmp.append(LO.strip())
@@ -83,10 +91,6 @@ with open(file_path, encoding='utf-8', mode='r') as file:
 print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + os.getcwd())
 
 # ISSUES to fix (eventually)
-# Issue: For whatever reason (not yet found), if an answer choice includes a comma (,) or apostrophe (')
-#   it gets split into two different cells, resulting in more columns per row than there should be.
-#   Example: "a. blah blah, bleh bleh bleh" --> [blah blah] | [bleh bleh bleh] ([ ] = cell)
-##   Answer found @ line 50 & 52 ; replace .split(',') with another character
 
 # Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
 # Need to append as raw string. 
