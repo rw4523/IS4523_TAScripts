@@ -4,7 +4,7 @@
 
 import os
 import pandas as pd
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 
 directory = os.getcwd()
 file = input('\nEnter file path to .csv or .xls file:  ')
