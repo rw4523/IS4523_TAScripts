@@ -41,9 +41,6 @@ abc123_list  = df['Last Edited by: Username'].tolist()
 status_list  = df['Event'].tolist()
 submit_list  = df['Attempt Submitted'].tolist()
 task_list    = df['Column'].tolist()
-multiple = len(name_list)
-
-# print(str(name_list) + '\n' + str(abc123_list))
 
 for entry in range(len(name_list)):   # issue: does not iterate more than once. (Will fix it later)
 #for entry in range(0, multiple+1):
