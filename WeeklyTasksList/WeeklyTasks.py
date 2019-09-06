@@ -1,6 +1,6 @@
 # Script to read csv or xls file from Blackboard "Weekly Report" tool and output a list of things to complete for the week.
-# Should output everything that was submitted for that week, including items that may have already been completed
-# Will add removing entries already graded by TA code later..
+# Should output everything that was submitted for that week, including items that may have already been graded*
+# *Will add removing entries already graded by TA code later..
 
 import os
 import pandas as pd
