@@ -2,9 +2,10 @@
 # Should output everything that was submitted for that week, including items that may have already been graded*
 # *Will add removing entries already graded by TA code later..
 
+from datetime import datetime, timedelta
 import os
 import pandas as pd
-from datetime import datetime, timedelta
+import sys
 
 directory = os.getcwd()
 file = input('\nEnter file path to .csv or .xls file:  ')
@@ -15,7 +16,8 @@ if '.xls' in file:
 elif '.csv' in file:
     df = pd.read_csv(file)
 else:
-    print('Error: Input file must be CSV (.csv) or XLS (.xls)')
+    print('Error: Input file must be CSV (.csv) or XLS (.xls) \nExiting script.')
+    sys.exit(0)
 
 # Only want gradable entries made by Students of Module Quiz and Lab
 df = df[df['Column'].str.contains('Module Quiz') | df['Column'].str.contains('Lab')]
@@ -25,11 +27,11 @@ df = df.drop(columns='Last Edited by: IP Address')
 
 ### FORMAT
 #
-# Student Name: \t [User]
-# ABC123: \t [Last Edited by: Username]
-# Status: \t [Event]
-# Submit Date: \t [Attempt Submitted]
-# Assignment: \t [Column]
+# Student Name: [User]
+# ABC123:       [Last Edited by: Username]
+# Status:       [Event]
+# Submit Date:  [Attempt Submitted]
+# Assignment:   [Column]
 # 
 # \n\n
 ###
