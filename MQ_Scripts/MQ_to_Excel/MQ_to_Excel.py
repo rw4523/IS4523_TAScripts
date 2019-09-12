@@ -58,6 +58,19 @@ def question_to_row(data):
         for x in answer_list:
             if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
                 x = x[5:]
+'''
+# new version (replace line 48 - 60) -- need to test
+answer_list = ''
+
+if (not ' {' in data) or (not '}' in data):
+     answer_list = data.split('\n')
+else:
+     answer_list = data[data.index('}')+2:].split('\n')
+
+for x in answer_list:
+     if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
+     x = x[5:]
+'''
     tmp = []
     tmp.append(q_number.strip())
     tmp.append(LO.strip())
