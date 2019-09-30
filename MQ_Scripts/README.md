@@ -42,7 +42,7 @@ Written in Python 3 (Does not work in 2.7)
 ```
   * Notes:
      * `.txt` file **MUST** be saved using **UTF-8 encoding**. (ANSI will cause errors)
-     * Looks like 2 spaces `  ` on this `README.md` file, but that should be a tab. 
+     * Looks like 2 spaces `  ` on this `README.md` file, but that should be a tab (`\t`). 
         * If copy/pasting from `.docx`, it should do this automatically. 
         * You should still add 1 empty line between questions
      * Do not add apostrophes (`'`) in answer choices because it can break the script (Not yet sure why).
