@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 # specifying which xlsx file to use
-directory = 'Put directory to where the .xlsx is located'              # Should probably add tkinter to this..
+directory = 'Put directory to where the .xlsx is located'              # example directory: 'C:\\User\\*User*\\Downloads\\'
 file_name = input('Enter name of Quiz .xlsx file (example: Module 1 Quiz.xlsx): ')
 
 if not '.xlsx' in file_name:
@@ -12,16 +12,17 @@ if not '.xlsx' in file_name:
 while not Path(directory + file_name).is_file():
     print('\n' + file_name + ' does not exist')
     file_name = input('Enter name of Quiz .xlsx file (example: Module 1 Quiz.xlsx) or EXIT to quit: ')
-    if not '.xlsx' in file_name:
-        file_name = file_name + '.xlsx'
     if 'EXIT' in file_name:
         break
+    elif not '.xlsx' in file_name:
+        file_name = file_name + '.xlsx'
 
 rowNum = input('What row is \'Quiz Questions\' located on: ')
 while not rowNum.isdigit():
     print('\nIntegers only')
     rowNum = input('What row is \'Quiz Questions\' located on: ')
 
+# if using ipynb , split this line to the end into another code block.
 rowNum = int(rowNum)
 # df_obj = Learning objectives | df_q = Quiz Questions
 df_obj = pd.read_excel(directory + file_name, skiprows=1, header=None)
