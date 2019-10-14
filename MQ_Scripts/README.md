@@ -12,6 +12,10 @@ Written in Python 3 (Does not work in 2.7)
       This is another LO
       -- (This is another Ans.Loc.)
       -- (More Ans.Loc. if there is more)
+      
+      This is the first LO
+      This is the second LO
+      -- (This is an Ans.Loc.)
 ```
 
 ---
