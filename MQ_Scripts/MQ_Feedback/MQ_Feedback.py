@@ -4,6 +4,7 @@
 
 import pandas as pd
 from pathlib import Path
+import sys
 
 # specifying which xlsx file to use ; should probably tkinter this later..
 directory = 'C:\\Path\\to\\MQs\\'              # Directory path to module quiz file directory. add the \\ at end.
@@ -17,7 +18,7 @@ while not Path(directory + file_name).is_file():
     print('\n' + file_name + ' does not exist')
     file_name = input('Enter name of Quiz .xlsx file (example: Module 1 Quiz.xlsx) or EXIT to quit: ')
     if 'EXIT' in file_name:
-        break
+        sys.exit(0)
     elif not '.xlsx' in file_name:
         file_name = file_name + '.xlsx'
     
