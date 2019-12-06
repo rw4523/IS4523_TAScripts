@@ -5,7 +5,8 @@ Written in Python 3 (Does not work in 2.7)
 
 ### MQ_Feedback.py:
    * Reads in the `.xlsx` file that stores the `LO`'s and `Ans.Loc.`'s of each question. Outputs it in the format below for questions missed 
-   * Will prompt for file name (i.e.: `quiz 1.xlsx`) , and which row that `Quiz Questions` starts on (i.e. `20`)
+   * Will prompt for file name (i.e.: `quiz 1.xlsx`) , and which row that `Quiz Questions` starts on (i.e. if `Quiz Questions` is on row 20, enter `20`)
+   * Because multiple questions might have the same Learning Objective, make sure to copy the output into a Notepad first and combine the Answer Locations of the questions under the same Learning Objective.
  ```    
       This is where the LO looks like
       -- (Ans.Loc written to here)
