@@ -8,6 +8,9 @@ If you're not the IS4523 TA/Professor(s), please run away screaming.
 ### Who do I blame if I'm not the TA/Professor(s) and I try to run the scripts and it crashes?
 Not me.
 
+### Where are the instructions for using the scripts?
+Info here: https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md
+
 ### Other notes:
 * This repository was copied over from my other github account. I moved it into this one so that in case I change my name on that one, the link from the "Read me first".pptx won't break.
 * If you are the TA/Professor(s) and you run into an issue/need help troubleshooting, please send me an email (my email is in ~slide 68-ish in the "READ ME FIRST" powerpoint) or a message on discord (email for details).
