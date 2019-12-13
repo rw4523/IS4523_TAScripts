@@ -3,7 +3,7 @@ Scripts for increasing/improving efficiency for TA-related tasks for IS4523
 
 ### Who can use these scripts?
 The IS4523 TA/Professor(s) because these scripts are specific to the course. 
-If you're not the IS4523 TA/Professor(s), how did you get here?
+If you're not the IS4523 TA/Professor(s), please run away screaming.
 
 ### Who do I blame if I'm not the TA/Professor(s) and I try to run the scripts and it crashes?
 Not me.
