@@ -4,6 +4,7 @@
 # Best case scenario: directory path tweaking makes it work ; worst case scenario: you buy a PC or use the lab PCs
 # Works only with Excel files (xlsx yes, xls maybe, csv no)
 
+# imports, don't touch these if you want the script to work properly.
 import pandas as pd
 from pathlib import Path
 import sys
@@ -46,6 +47,7 @@ df_q   = pd.read_excel(directory + file_name, skiprows=rowNum)
 # selecting first 2 columns and between rows 2 and whever the NaN starts-1
 df_obj = df_obj.iloc[:, 0:2]
 df_obj.columns = ['Symbol', 'Content']     # 'Symbol' = A1, A2, etc. ; 'Content' = the learning objective
+
 # rowNum = min(df_obj[df_obj['Symbol'].isnull()].index)
 df_obj = df_obj.iloc[0:rowNum, :] 
 df_obj = df_obj.dropna(subset=['Content'])
@@ -63,6 +65,7 @@ print('\nThe questions missed pertain to the following learning objectives. \n' 
       'In parentheses after each learning objective is specific course material that would \nbe good to study ' +
       'to better understand the respective learning objective, pertaining to questions missed.\n') # new line
 
+# iterates through all of the questions entered in 'missed' for assembling feedback
 for i in range(len(missed)):
     found = df_qq[df_qq['Question Number'] == missed[i]]
     quiz_lo = str(found['LO'].tolist()).replace('\'', '').replace('[', '').replace(']', '') # ['A1'] --> A1
@@ -96,16 +99,16 @@ for i in range(len(missed)):
             learn_obj = df_obj[df_obj['Symbol'] == x]
             c_obj += str(learn_obj['Content'].tolist()).replace('\'', '').replace('[', '').replace(']', '') + '\n' # ['A1'] --> A1
         c_obj = c_obj.strip()
-        
     else:
         learn_obj = df_obj[df_obj['Symbol'] == quiz_lo]
         c_obj = str(learn_obj['Content'].tolist()).replace('\'', '').replace('[', '').replace(']', '') # ['A1'] --> A1
-        
     print(str(c_obj) + '\n' + ans)
 
-# FORMAT
+# ==  FORMAT OF OUTPUT  ==
+#     
 #     c_obj [learning objective]
 #      -- ( ans [contents, Ans. Loc])
-    
+#     
 #     c_obj (learning objective)
 #      -- ( ans (contents, Ans. Loc))
+#     
