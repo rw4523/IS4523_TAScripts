@@ -1,11 +1,14 @@
 # Module Quiz Scripts
 Used for making/using `.xlsx` files in the format that BlackBoard's quiz machine accepts
 
-Written in Python 3 (Does not work in 2.7)
+Written in Python 3 (Does not work in 2.7), on a Windows 10 PC. 
+Works with Mac/OSX if using Anaconda-Navigator/JupyterNotebook (Python 3) version. (I hope).
 
 ### MQ_Feedback.py:
    * Reads in the `.xlsx` file that stores the `LO`'s and `Ans.Loc.`'s of each question. Outputs it in the format below for questions missed 
+     * Please note that this script **ONLY** works with `.xlsx` and maybe `.xls` files. `.csv` will likely not work.
    * Will prompt for file name (i.e.: `quiz 1.xlsx`) , and which row that `Quiz Questions` starts on (i.e. if `Quiz Questions` is on row 20, enter `20`)
+   * for the `directory` value, please enter the file path to where the Module Quizz excel files are located.
    * Because multiple questions might have the same Learning Objective, make sure to copy the output into a Notepad first and combine the Answer Locations of the questions under the same Learning Objective.
  ```    
       This is where the LO looks like
@@ -58,4 +61,3 @@ Written in Python 3 (Does not work in 2.7)
      * After the `.xlsx` is created, you need to copy paste the `LO`'s into the `.xlsx` file, before the block that is the quiz questions.
         * Might still require a human to check it, as it is not 100% perfect but will reduce time taken to make `.xlsx` file.
      * May require installing `tkinter`. For installation details, consult your package manager (pip, conda, etc.)
-        * Will likely be replacing this with Argparser in the future.
