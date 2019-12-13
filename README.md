@@ -9,5 +9,5 @@ If you're not the IS4523 TA/Professor(s), how did you get here?
 Not me.
 
 ##### Other notes:
-This repository was copied over from my other github account. I moved it into this one so that in case I change my name on that one, the link from the "Read me first".pptx won't break.
-If you are the TA/Professor(s) and you run into an issue/need help troubleshooting, please send me an email (my email is in ~slide 68-ish in the "READ ME FIRST" powerpoint) or a message on discord (email for details).
+* This repository was copied over from my other github account. I moved it into this one so that in case I change my name on that one, the link from the "Read me first".pptx won't break.
+* If you are the TA/Professor(s) and you run into an issue/need help troubleshooting, please send me an email (my email is in ~slide 68-ish in the "READ ME FIRST" powerpoint) or a message on discord (email for details).
