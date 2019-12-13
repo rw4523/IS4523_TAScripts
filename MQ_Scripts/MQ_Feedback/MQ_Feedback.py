@@ -1,6 +1,8 @@
 # Script made for use with Python 3 on Windows 
-# Might not run on OSX, need to tweak directory path
+# OSX might need to tweak directory path, or put script in same directory as the Module_Quiz excel files.
+#     If going with this method, set "directory" equal to ''
 # Best case scenario: directory path tweaking makes it work ; worst case scenario: you buy a PC or use the lab PCs
+# Works only with Excel files (xlsx yes, xls maybe, csv no)
 
 import pandas as pd
 from pathlib import Path
@@ -10,6 +12,7 @@ import sys
 directory = 'C:\\Path\\to\\MQs\\'              # Directory path to module quiz file directory. add the \\ at end.
 file_name = input('Enter name of Quiz .xlsx file (example: Module 1 Quiz.xlsx): ')
 
+# if the Excel extension is not already written, add it into the file name. 
 if not '.xlsx' in file_name:
     file_name = file_name + '.xlsx'
 
@@ -22,20 +25,23 @@ while not Path(directory + file_name).is_file():
     elif not '.xlsx' in file_name:
         file_name = file_name + '.xlsx'
     
-
+# prompt for what row "Quiz Questions" is on. (i.e.) if Quiz Questions is on row 12, enter 12
 rowNum = input('What row is \'Quiz Questions\' located on: ')
 while not rowNum.isdigit():
     print('\nIntegers only')
     rowNum = input('What row is \'Quiz Questions\' located on: ')
 
-# --- If using Jupyter Notebook/iPynb or similar, put below code in separate code block
+# =========================================================================================
+# ==  If using Jupyter Notebook/iPynb or similar, put below code in separate code block  ==
+# =========================================================================================
 
+# leave this block alone.
 rowNum = int(rowNum)
 # df_obj = Learning objectives ; df_q = Quiz Questions
 df_obj = pd.read_excel(directory + file_name, skiprows=1, header=None)
 df_q   = pd.read_excel(directory + file_name, skiprows=rowNum)
 
-# --- Code below for assembling the feedback ---
+# === Code below for assembling the feedback ===
 
 # selecting first 2 columns and between rows 2 and whever the NaN starts-1
 df_obj = df_obj.iloc[:, 0:2]
@@ -44,12 +50,12 @@ df_obj.columns = ['Symbol', 'Content']     # 'Symbol' = A1, A2, etc. ; 'Content'
 df_obj = df_obj.iloc[0:rowNum, :] 
 df_obj = df_obj.dropna(subset=['Content'])
 
-# df_qq = Quiz Questions, matches to learning Objectives
+# df_qq = Quiz Questions, matches to Learning Objectives
 df_qq = df_q[['#', 'LO', 'Ans. Loc.']]
 df_qq.columns = ['Question Number', 'LO', 'Answer Location']
 
-# prompt for questions missed, stored as an integer list
-missed = input('Enter questions missed: ').split(',')
+# prompt for questions missed, removes empty strings (''), store as an integer list
+missed = list(filter(None, input('Enter questions missed: ').split(',')))
 missed = [int(i) for i in missed]
 
 # instruction message to students
@@ -78,6 +84,7 @@ for i in range(len(missed)):
     for x in ans_loc:
         ans += ' -- (' + str(x) + ')  \n'
     
+    # these two variables used for creating the formatted output
     learn_obj = ''
     c_obj = ''
     
