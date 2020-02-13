@@ -1,4 +1,4 @@
-**For the how-to info, click [HERE](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md#mq_feedbackpy)** 
+**For the how-to info, click [HERE](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md#mq_feedbackpy).**
 
 ### NOTES
 * The first time you copy this script over to wherever you're running it, be sure to change the `directory` variable (on line 13) to match where you're storing the `.xlsx` files for the Module Quizzes. If they are in another directory, set it to the folder that stores it. 
