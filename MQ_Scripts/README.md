@@ -4,7 +4,7 @@ Used for making/using `.xlsx` files in the format that BlackBoard's quiz machine
 Written in Python 3 (Does not work in 2.7), on a Windows 10 PC. 
 Works with Mac/OSX if using Anaconda-Navigator/JupyterNotebook (Python 3) version. (I hope).
 If you don't want to install new Anaconda/JupyterNotebook onto your computer, you can alternatively use [Google Colab](https://colab.research.google.com/). 
-* Note: Use at your own risk because Google *might or might not* charge you. If you do decide to use the Google route and somehow get charged, you **cannot** email me with the bill.
+* Note: Use at your own risk because Google *might or might not* charge you. I just heard it's an option but I've never ran the `MQ_Scripts` with it.
 
 ### [MQ_Feedback.py](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_Feedback/MQ_Feedback.py):
    * Reads in the `.xlsx` file that stores the `LO`'s and `Ans.Loc.`'s of each question. Outputs it in the format below for questions missed 
