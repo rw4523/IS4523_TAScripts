@@ -1,4 +1,4 @@
-**For the how-to info, see:** https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md#mq_to_excelpy
+**For the how-to information, click [HERE](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md#mq_to_excelpy).**
 
 ### Note: `MQ_to_Excel.py` is not 100% error-proof. 
    * The human using this script should still check the output, then copy in the `LO`'s and information about the LO's at the top rows
