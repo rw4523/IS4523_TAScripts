@@ -6,6 +6,8 @@ Works with Mac/OSX if using Anaconda-Navigator/Jupyter Notebook (Python 3) versi
 If you don't want to install new Anaconda/Jupyter Notebook onto your computer, you can alternatively use [Google Colab](https://colab.research.google.com/). 
 * Note: Use at your own risk because Google *might or might not* charge you. I just heard it's an option but I've never ran the `MQ_Scripts` with it.
 
+*Please make sure you've read this readme, as well as the readme's for the two scripts. I'm not too sure why I decided to make 3 separate readme's either.*
+
 ### [MQ_Feedback.py](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_Feedback/MQ_Feedback.py):
    * Reads in the `.xlsx` file that stores the `LO`'s and `Ans.Loc.`'s of each question. Outputs it in the format below for questions missed 
      * Please note that this script **ONLY** works with `.xlsx` and maybe `.xls` files. `.csv` will likely not work.
