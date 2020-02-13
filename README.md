@@ -9,7 +9,7 @@ If you're not the IS4523 TA/Professor(s), please run away screaming.
 Not me.
 
 ### Where are the instructions for using the scripts?
-You can find the instructions [HERE](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md).
+You can find the instructions **[HERE](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md)**.
 
 ### Other notes:
 * This repository was copied over from my other github account. I moved it into this one so that in case I change my name on that one, the link from the "Read me first".pptx won't break.
