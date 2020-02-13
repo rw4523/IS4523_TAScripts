@@ -1,9 +1,9 @@
 # Module Quiz Scripts
 Used for making/using `.xlsx` files in the format that BlackBoard's quiz machine accepts
 
-Written in Python 3 (Does not work in 2.7), on a Windows 10 PC. 
-Works with Mac/OSX if using Anaconda-Navigator/JupyterNotebook (Python 3) version. (I hope).
-If you don't want to install new Anaconda/JupyterNotebook onto your computer, you can alternatively use [Google Colab](https://colab.research.google.com/). 
+Written in Python 3 (Does not work in 2.7), using [Anaconda Navigator's Jupyter Notebook](https://www.anaconda.com/distribution/#windows), on a Windows 10 PC. 
+Works with Mac/OSX if using Anaconda-Navigator/Jupyter Notebook (Python 3) version. (I hope).
+If you don't want to install new Anaconda/Jupyter Notebook onto your computer, you can alternatively use [Google Colab](https://colab.research.google.com/). 
 * Note: Use at your own risk because Google *might or might not* charge you. I just heard it's an option but I've never ran the `MQ_Scripts` with it.
 
 ### [MQ_Feedback.py](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_Feedback/MQ_Feedback.py):
