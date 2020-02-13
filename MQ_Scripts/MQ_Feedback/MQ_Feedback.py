@@ -1,4 +1,5 @@
 # Script made for use with Python 3 on Windows 
+# Please consult the README.md files before running.
 # OSX might need to tweak directory path, or put script in same directory as the Module_Quiz excel files.
 #     If going with this method, set "directory" equal to ''
 # Best case scenario: directory path tweaking makes it work ; worst case scenario: you buy a PC or use the lab PCs
