@@ -71,4 +71,4 @@ If you don't want to install new Anaconda/Jupyter Notebook onto your computer, y
      * After the `.xlsx` is created, you need to copy paste the `LO`'s into the `.xlsx` file, before the block that is the quiz questions.
         * Might still require a human to check it, as it is not 100% perfect but will reduce time taken to make `.xlsx` file.
      * May require installing `argparse`. For installation details, consult your package manager (pip, conda, etc.)
-       ** Extra details see **[HERE]**(https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_to_Excel/README.md#troubleshooting)
+       ** Extra details see [**HERE**](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_to_Excel/README.md#troubleshooting)
