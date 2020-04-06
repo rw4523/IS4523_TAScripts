@@ -1,23 +1,12 @@
-# Just trying to see if I can turn this script to be runnable in command line rather than needing to start Jupyter or anything else
-#    to get it to work. 
-# Code worked during testing, broke in command line :/
-
 import argparse
 import os
 import pandas as pd
 import re
 
-# argparse so the script can be used in command line
-# Usage if script located in same directory as input file: 
-#     python3 mq_to_excel.py -i input.txt -o output.xlsx
-# Usage if script located in different directory than input file:
-#     python3 mq_to_excel.py -i "C:\Path\To\File\input.txt" -o "C:\Preferred\Path\To\File\output.txt"
-
 parser = argparse.ArgumentParser(description='Converts module quiz txt file into an excel spreadsheet following the BlackBoard Module Quiz format.')
 parser.add_argument('-i', '--input', metavar='', required=True, help='file path to the .txt input file')
 parser.add_argument('-o', '--output', metavar='', required=True, help='.xlsx file name that the output should be saved as')
 args = parser.parse_args()
-
 file_path = args.input
 fname = args.output
 
@@ -100,5 +89,5 @@ if __name__ == '__main__':
         df = pd.DataFrame(lst, index=None)
         #df.columns = arr
         #quiz_num = input('Enter Module Quiz Number: ')
-        df.to_excel(fname[0:-4] + '.xlsx', index=False, header=None)
-        print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + os.getcwd())
+        df.to_excel(fname[0:-4] + 'xlsx', index=False, header=None)
+        print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + 'xlsx\' saved to ' + os.getcwd())
