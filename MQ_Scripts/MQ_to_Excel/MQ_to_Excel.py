@@ -58,19 +58,7 @@ def question_to_row(data):
         for x in answer_list:
             if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
                 x = x[5:]
-'''
-# new version (replace line 48 - 60) -- need to test
-answer_list = ''
 
-if (not ' {' in data) or (not '}' in data):
-     answer_list = data.split('\n')
-else:
-     answer_list = data[data.index('}')+2:].split('\n')
-
-for x in answer_list:
-     if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
-     x = x[5:]
-'''
     tmp = []
     tmp.append(q_number.strip())
     tmp.append(LO.strip())
@@ -101,9 +89,7 @@ with open(file_path, encoding='utf-8', mode='r') as file:
     #df.columns = arr
     #quiz_num = input('Enter Module Quiz Number: ')
     df.to_excel(fname[0:-4] + '.xlsx', index=False, header=None)
-print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + os.getcwd())
-
-# ISSUES to fix (eventually)
+    print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + '.xlsx\' saved to ' + os.getcwd())
 
 # Issue: if text contains a special character (i.e. \ ), it will be printed as '\\'
 # Need to append as raw string. 
