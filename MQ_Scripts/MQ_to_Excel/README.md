@@ -5,6 +5,11 @@
    * This is not made to get things done in a few seconds. You (the TA) will still need to read the slides/textbook/etc. to make the quiz questions.
         * This script will only speed up the time it takes to convert the questions you made 
    in a `.txt` file (assuming using UTF-8, not ANSI encoding) to the `.xlsx` format that Blackboard uses for the MQ's. 
+   
+##### Reserved symbols/characters
+   * `*` = Correct answer(s). Answer choices without an Asterisk (`*`) will be marked as "`Incorrect`"
+   * `{` and `}` = Source of the answer (i.e. from Textbook, Slides, Notes, etc.)
+   * `[` and `]` = Learning Objective(s). Multiple Learning Objectives can be added with a comma "`,`" (i.e. `A1, A2, B1`)
 
 ##### Requirements
    * A computer that can run `Python 3` or later. 
