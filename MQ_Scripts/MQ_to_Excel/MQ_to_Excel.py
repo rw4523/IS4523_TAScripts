@@ -24,8 +24,8 @@ if not '.xlsx' in args.output:   # txt
 else:
     fname = args.output
 
-lst = []      # append to lst when adding another row of questions
-# lst.append(['Quiz Questions', ' '])
+# append to lst when adding another row of questions
+lst = []
 arr = ['#', 'LO', 'Ans. Loc.', 'Format', 'Question', 'a', ' ', 'b', ' ', 'c', ' ', 'd', ' ', 'e', ' ']
 lst.append(arr)
 
@@ -49,7 +49,7 @@ def question_to_row(data):
     q_number = data[0:data.index('.')]                      # question number
     
     if not '[' in data:
-        LO = data[data.index('.')+3: re.match(re.compile(r'[A-Za-z]'))] ### ISSUE
+        LO = data[data.index('.')+3: re.match(re.compile(r'[A-Za-z]'))] ### ISSUE to be fixed someday..
     LO = data[data.index('.')+3: data.index(']')]           # learning objective of the question
     
     if not ' {' in data:
@@ -62,13 +62,11 @@ def question_to_row(data):
 
     # if '{' or '}' does not exist
     if (not ' {' in data) or (not '}' in data):
-        # answer_list = str(data.split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
         answer_list = data.split('\n')
         for x in answer_list:
             if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
                 x = x[5:]
     else:
-        # answer_list = str(data[data.index('}')+2:].split('\n')).replace('a.\t', '').replace('b.\t', '').replace('c.\t', '').replace('d.\t', '').replace('e.\t', '').replace('\\t', '').replace('[', '').replace(']', '').replace('\'', '').split(',')
         answer_list = data[data.index('}')+2:].split('\n')
         for x in answer_list:
             if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
@@ -85,7 +83,6 @@ def question_to_row(data):
     # code block to get rid of the asterisk (*) 
     for i in answer_list:
         if '*' in i:
-            #i = i.replace('\t*', '')
             tmp.append(i.replace('\t*', '')[i.index('.')+1:].strip())
             tmp.append('Correct')
         else:
@@ -96,7 +93,6 @@ def question_to_row(data):
 if __name__ == '__main__':
     with open(file_path, encoding='utf-8', mode='r') as file:
         data = file.read()                                     # file read into a string (data)
-        # print(data +'\n\n --- ')
         data_list = data.split('\n\n')
         for i in data_list:
             question_to_row(i)
@@ -104,8 +100,6 @@ if __name__ == '__main__':
 
         # convert list to dataframe and export to Excel
         df = pd.DataFrame(lst, index=None)
-        #df.columns = arr
-        #quiz_num = input('Enter Module Quiz Number: ')
         df.to_excel(fname[0:-4] + 'xlsx', index=False, header=None)
         time_taken = time.time() - start_time
         print(('\nREAD:  ' + file_path + '\nDONE: \'' + fname[0:-4] + 'xlsx\' saved to ' + os.getcwd() 
