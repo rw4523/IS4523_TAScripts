@@ -2,7 +2,11 @@ import argparse
 import os
 import pandas as pd
 import re
+import time
 
+start_time = time.time()
+
+# argparse
 parser = argparse.ArgumentParser(description='Converts module quiz txt file into an excel spreadsheet following the BlackBoard Module Quiz format.')
 parser.add_argument('-i', '--input', metavar='', required=True, help='file path to the .txt input file')
 parser.add_argument('-o', '--output', metavar='', required=True, help='.xlsx file name that the output should be saved as')
@@ -10,11 +14,22 @@ args = parser.parse_args()
 file_path = args.input
 fname = args.output
 
+# file extensions check
+if not '.txt' in args.input:     # xlsx
+    file_path = args.input + '.txt'
+else:
+    file_path = args.input
+if not '.xlsx' in args.output:   # txt
+    fname = args.output + '.xlsx'
+else:
+    fname = args.output
+
 lst = []      # append to lst when adding another row of questions
 # lst.append(['Quiz Questions', ' '])
 arr = ['#', 'LO', 'Ans. Loc.', 'Format', 'Question', 'a', ' ', 'b', ' ', 'c', ' ', 'd', ' ', 'e', ' ']
 lst.append(arr)
-    
+
+# row-by-row assembly of questions
 def question_to_row(data):
     count = 0
     choices = ['a.', 'b.', 'c.', 'd.', 'e.']
@@ -59,6 +74,7 @@ def question_to_row(data):
             if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
                 x = x[5:]
 
+    # appending data to cells
     tmp = []
     tmp.append(q_number.strip())
     tmp.append(LO.strip())
@@ -66,8 +82,9 @@ def question_to_row(data):
     tmp.append(q_format.strip())
     tmp.append(question.strip())
     
+    # code block to get rid of the asterisk (*) 
     for i in answer_list:
-        if '*' in i:                  # if/else block to get rid of the asterisk (*) 
+        if '*' in i:
             #i = i.replace('\t*', '')
             tmp.append(i.replace('\t*', '')[i.index('.')+1:].strip())
             tmp.append('Correct')
@@ -90,4 +107,6 @@ if __name__ == '__main__':
         #df.columns = arr
         #quiz_num = input('Enter Module Quiz Number: ')
         df.to_excel(fname[0:-4] + 'xlsx', index=False, header=None)
-        print('\nREAD:  ' + fname + '\nDONE: \'' + fname[0:-4] + 'xlsx\' saved to ' + os.getcwd())
+        time_taken = time.time() - start_time
+        print(('\nREAD:  ' + file_path + '\nDONE: \'' + fname[0:-4] + 'xlsx\' saved to ' + os.getcwd() 
+               + '\nTime taken: {:.2f} seconds').format(time_taken))
