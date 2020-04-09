@@ -81,7 +81,7 @@ def question_to_row(data):
     tmp.append(q_format.strip())
     tmp.append(question.strip())
     
-    # final check to remove asterisks (*) 
+    # second check to remove asterisks (*) 
     for i in answer_list:
         if '*' in i:
             tmp.append(i.replace('\t*', '')[i.index('.')+1:].strip())
