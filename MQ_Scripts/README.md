@@ -60,7 +60,7 @@ If you don't want to install new Anaconda/Jupyter Notebook onto your computer, y
       e.  Also Incorrect Answer
 ```
   * Reserved symbols:
-       *     `*`     = Correct answer(s). Answer choices without an Asterisk (`*`) will be marked as "`Incorrect`"
+       * `*`         = Correct answer(s). Answer choices without an Asterisk (`*`) will be marked as "`Incorrect`"
        * `{` and `}` = Source of the answer (i.e. from Textbook, Slides, Notes, etc.)
        * `[` and `]` = Learning Objective(s). Multiple Learning Objectives can be added with a comma "`,`" (i.e. `A1, A2, B1`)
        
