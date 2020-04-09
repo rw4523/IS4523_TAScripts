@@ -59,13 +59,18 @@ If you don't want to install new Anaconda/Jupyter Notebook onto your computer, y
       d.  Incorrect Answer
       e.  Also Incorrect Answer
 ```
+  * Reserved symbols:
+       *     `*`     = Correct answer(s). Answer choices without an Asterisk (`*`) will be marked as "`Incorrect`"
+       * `{` and `}` = Source of the answer (i.e. from Textbook, Slides, Notes, etc.)
+       * `[` and `]` = Learning Objective(s). Multiple Learning Objectives can be added with a comma "`,`" (i.e. `A1, A2, B1`)
+       
   * Notes:
      * `.txt` file **MUST** be saved using **UTF-8 encoding**. (ANSI will cause errors)
-     * Looks like 2 spaces "`  `" on this `README.md` file, but that should be a tab (`\t`). 
+     * Looks like 2 spaces "`  `" on this `README.md` file lines 44-60, but that should be a tab (`\t`). 
         * If copy/pasting from `.docx`, it should do this automatically. 
-        * You should still add 1 empty line between questions
+        * You **must** still add 1 empty line between questions (that's how the script knows how to separate questions)
      * Do not add apostrophes (`'`) in answer choices because it can break the script (Not yet sure why).
-     * Backslashes can sometimes cause errors. (Need to figure out how to convert data stored in variables as raw string)
+     * Backslashes can sometimes cause errors. If a backslash is absolutely needed, use `\\`.
         * Example answer choice: `\tmp` gets outputted as `mp`
      * If the question does not have an `LO` or `Ans.Loc.`, use double dash (`--`)
      * After the `.xlsx` is created, you need to copy paste the `LO`'s into the `.xlsx` file, before the block that is the quiz questions.
