@@ -49,8 +49,9 @@ def question_to_row(data):
     q_number = data[0:data.index('.')]                      # question number
     
     if not '[' in data:
-        LO = data[data.index('.')+3: re.match(re.compile(r'[A-Za-z]'))] ### ISSUE to be fixed someday..
-    LO = data[data.index('.')+3: data.index(']')]           # learning objective of the question
+        LO = data[data.index('.')+3: re.match(re.compile(r'[A-Za-z]'))]
+    else:
+        LO = data[data.index('.')+3: data.index(']')]           # learning objective of the question
     
     if not ' {' in data:
         question = data[data.index('] '):]
