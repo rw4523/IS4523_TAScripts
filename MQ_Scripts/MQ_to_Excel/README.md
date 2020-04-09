@@ -6,7 +6,7 @@
         * This script will only speed up the time it takes to convert the questions you made 
    in a `.txt` file (assuming using UTF-8, not ANSI encoding) to the `.xlsx` format that Blackboard uses for the MQ's. 
    
-##### Reserved symbols/characters
+##### Reserved symbols/characters (please use these only in the format specified [*here*](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/README.md#mq_to_excelpy))
    * `*` = Correct answer(s). Answer choices without an Asterisk (`*`) will be marked as "`Incorrect`"
    * `{` and `}` = Source of the answer (i.e. from Textbook, Slides, Notes, etc.)
    * `[` and `]` = Learning Objective(s). Multiple Learning Objectives can be added with a comma "`,`" (i.e. `A1, A2, B1`)
