@@ -35,7 +35,7 @@ If you don't want to install new Anaconda/Jupyter Notebook onto your computer, y
 
 ---
 
-### [MQ_to_Excel.py](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_to_Excel/Argparse/MQ_to_Excel.py)
+### [MQ_to_Excel.py](https://github.com/rw4523/IS4523_TAScripts/blob/master/MQ_Scripts/MQ_to_Excel/MQ_to_Excel.py)
    * The actual questions should be done using numbered list in `.docx` and copy pasted into a .txt file. 
    * Save as a `.txt` file on the PC. Then space out the questions (1 empty row between questions).
    * Script will prompt for where the `.txt file` is, and will format it into the BlackBoard format as a `.xlsx` file
