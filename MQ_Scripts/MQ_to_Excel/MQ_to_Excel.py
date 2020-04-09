@@ -11,18 +11,18 @@ parser = argparse.ArgumentParser(description='Converts module quiz txt file into
 parser.add_argument('-i', '--input', metavar='', required=True, help='file path to the .txt input file')
 parser.add_argument('-o', '--output', metavar='', required=True, help='.xlsx file name that the output should be saved as')
 args = parser.parse_args()
-file_path = args.input
-fname = args.output
+file_input = args.input
+file_output = args.output
 
 # file extensions check
 if not '.txt' in args.input:     # xlsx
-    file_path = args.input + '.txt'
+    file_input = args.input + '.txt'
 else:
-    file_path = args.input
+    file_input = args.input
 if not '.xlsx' in args.output:   # txt
-    fname = args.output + '.xlsx'
+    f_output = args.output + '.xlsx'
 else:
-    fname = args.output
+    f_output = args.output
 
 # append to lst when adding another row of questions
 lst = []
@@ -92,7 +92,7 @@ def question_to_row(data):
     lst.append(tmp)
     
 if __name__ == '__main__':
-    with open(file_path, encoding='utf-8', mode='r') as file:
+    with open(file_input, encoding='utf-8', mode='r') as file:
         data = file.read()                                     # file read into a string (data)
         data_list = data.split('\n\n')
         for i in data_list:
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 
         # convert list to dataframe and export to Excel
         df = pd.DataFrame(lst, index=None)
-        df.to_excel(fname[0:-4] + 'xlsx', index=False, header=None)
+        df.to_excel(file_output[0:-4] + 'xlsx', index=False, header=None)
         time_taken = time.time() - start_time
-        print(('\nREAD:  ' + file_path + '\nDONE: \'' + fname[0:-4] + 'xlsx\' saved to ' + os.getcwd() 
+        print(('\nREAD:  ' + file_input + '\nDONE: \'' + file_output[0:-4] + 'xlsx\' saved to ' + os.getcwd() 
                + '\nTime taken: {:.2f} seconds').format(time_taken))
