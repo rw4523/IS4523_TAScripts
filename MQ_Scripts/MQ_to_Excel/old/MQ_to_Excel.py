@@ -1,5 +1,5 @@
-# this is the old tkinter version, which will show a popup to select file to use. 
-# the new version uses command line and can do everything this one can via "python.exe mq_to_excel.py -i input.txt -o output.xlsx"
+# this is the old version
+# please don't use this
 
 import os
 import pandas as pd
