@@ -65,12 +65,12 @@ def question_to_row(data):
     if (not ' {' in data) or (not '}' in data):
         answer_list = data.split('\n')
         for x in answer_list:
-            if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
+            if ('a.\t' in x) or ('b.\t' in x) or ('c.\t' in x) or ('d.\t' in x) or ('e.\t' in x):
                 x = x[5:]
     else:
         answer_list = data[data.index('}')+2:].split('\n')
         for x in answer_list:
-            if ('a.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x) or ('b.\t' in x):
+            if ('a.\t' in x) or ('b.\t' in x) or ('c.\t' in x) or ('d.\t' in x) or ('e.\t' in x):
                 x = x[5:]
 
     # appending data to cells
